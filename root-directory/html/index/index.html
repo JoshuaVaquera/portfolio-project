@@ -6,6 +6,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="../style/style.css">
     <script src="../code/node.js" defer></script>
+    <script>
+        function toggleImage(imageId) {
+            const imgContainer = document.getElementById(imageId);
+            if (imgContainer.style.display === "none" || imgContainer.style.display === "") {
+                imgContainer.style.display = "block";
+            } else {
+                imgContainer.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
  <header>
@@ -24,12 +34,24 @@
         <section>
             <h3>My Projects</h3>
             <ul>
-                <li>Project 1: COCO Cafe.</li>
-                    <img src="../../projects/3FOruPJ.jpg" alt="COCO Cafe Project Image">
-                <li>Project 2:Personal portfolio website</li>
-                    <img src="../../projects/generate an image of.png" alt="Runners Club Project Image">
-                <li>Project 3: Runners website</li>
-                    <img src="../../fake-website-templates-1000x750.jpg" alt="Personal Portfolio Project Image">
+                <li>Project 1: COCO Cafe.
+                    <button onclick="toggleImage('img1')">Show/Hide Image</button>
+                    <div id="img1" style="display:none;">
+                        <img src="../../projects/3FOruPJ.jpg" alt="COCO Cafe Project Image">
+                    </div>
+                </li>
+                <li>Project 2: Personal portfolio website
+                    <button onclick="toggleImage('img2')">Show/Hide Image</button>
+                    <div id="img2" style="display:none;">
+                        <img src="../../projects/generate an image of.png" alt="Personal Portfolio Project Image">
+                    </div>
+                </li>
+                <li>Project 3: Runners website
+                    <button onclick="toggleImage('img3')">Show/Hide Image</button>
+                    <div id="img3" style="display:none;">
+                        <img src="../../fake-website-templates-1000x750.jpg" alt="Runners Website Project Image">
+                    </div>
+                </li>
             </ul>
         </section>
     </main>
